@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViaJour</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <script src="https://kit.fontawesome.com/3bab539da3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Descubra, Planeje, Viaje com <br> ViaJour</h1>
+    </header>
+    
+    <main>
+        <section class="imagem"></section>
+        <section id="servicos-section">
+            
+            <article id="servico-1" class="servicos-article" tabindex="0">
+                <div class="descricao">
+                    <h2>Roteiro Automático</h2>
+                    <h3>Gratuito</h3>
+                    <button onclick="retomarFoco('servico-1')" class="botao-servicos">
+                        Agendar
+                    </button>
+                </div>
+                <img src="https://cdn.pixabay.com/photo/2023/05/28/12/08/suitcase-8023523_1280.png" alt="Serviços" class="servico-imagens">
+            </article>
+
+            <article id="servico-2" class="servicos-article" tabindex="0">
+                <div class="descricao">
+                    <h2>Cálculo de Custos</h2>
+                    <h3>Gratuito</h3>
+                    <button class="botao-servicos" onclick="retomarFoco('servico-2')">
+                        Ver custos
+                    </button>
+                </div>
+                <img src="https://cdn.pixabay.com/photo/2017/08/01/15/03/global-2566114_1280.jpg" alt="Serviços" class="servico-imagens">
+            </article>
+
+            <article id="servico-3" class="servicos-article" tabindex="0">
+                <div class="descricao">
+                    <h2>Monte sua Aventura</h2>
+                    <h3>Gratuito</h3>
+                    <button onclick="retomarFoco('servico-3')" class="botao-servicos">
+                        Agendar
+                    </button>
+                </div>
+                <img src="https://cdn.pixabay.com/photo/2019/08/11/15/48/road-trip-4399206_1280.png" alt="Serviços" class="servico-imagens">
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <h2>Siga&#8209;nos</h2>
+        <div class="rodape">
+            <div id="imagem-rodape-1" class="imagem-rodape"></div>
+            <div id="imagem-rodape-2" class="imagem-rodape"></div>
+            <div id="imagem-rodape-3" class="imagem-rodape"></div>
+            <div id="imagem-rodape-4" class="imagem-rodape"></div>
+        </div>
+        <nav>
+            <h3>Descubra o mundo conosco <br> <strong>Viajour</strong> <br> Descubra, Planeje, Viaje</h3>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+            </ul>
+        </nav>
+
+
+    </footer>
+
+    <script>
+       function retomarFoco(servicoEscolhido) {
+        const retomarFoco_de_servico = window.document.getElementById(servicoEscolhido);
+        setTimeout(() => retomarFoco_de_servico.focus(), 0);
+       }
+    </script>
+</body>
+</html>
