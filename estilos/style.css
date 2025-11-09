@@ -23,7 +23,7 @@ body.escuro {
     --fundo-tag-aberta: rgba(211, 211, 211, 0.300);
     --texto-produtos: rgb(108, 107, 107);
     --lua-modo-escuro: rgb(26, 26, 255);
-    --sol-modo-claro: black;
+    --sol-modo-claro: gray;
 }
 
 
@@ -88,7 +88,7 @@ div.cadastro > button {
     text-align: center;
     letter-spacing: 0.5px;
     font-size: 4.5vw;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 div.cadastro > button:active {
