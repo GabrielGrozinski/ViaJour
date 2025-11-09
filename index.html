@@ -6,13 +6,44 @@
     <title>ViaJour</title>
     <link rel="stylesheet" href="estilos/style.css">
     <script src="https://kit.fontawesome.com/3bab539da3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <div id="menu-pressionado">
+        <i id="botao-fechar" class="fa-solid fa-xmark"></i>
+        
+        <div class="cadastro">
+            <button id="cadastrar" href="">Cadastrar</button>
+            <button id="login" href="">Login</button>
+        </div>
+
+        <section id="topicos">
+            <div onclick="mostrarProdutos()" id="produtos-container">
+                <h3 id="produtos-tag">Produtos</h3>
+                <p id="sinal-icone">&gt;</p>
+            </div>
+            <div id="produtos-a-mostrar">
+                <h3>Roteiro Automático</h3>
+                <h3>Cálculo de Custos</h3>
+                <h3>Monte sua Aventura</h3>
+            </div>
+            <h3>Documentação</h3>
+            <h3>Preço</h3>
+            <h3>Contato</h3>
+        </section>
+
+    </div>
+
+    <header id="header">
+        <i id="aviao-icone" class="fa-solid fa-plane"></i>
+        <h2>ViaJour</h2>
+        <i id="menu-icone" onclick="mostrarMenu()" class="fa-solid fa-bars"></i>
         <h1>Descubra, Planeje, Viaje com <br> ViaJour</h1>
     </header>
     
-    <main>
+    <main id="main">
         <section class="imagem"></section>
         <section id="servicos-section">
             
@@ -52,7 +83,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         <h2>Siga&#8209;nos</h2>
         <div class="rodape">
             <div id="imagem-rodape-1" class="imagem-rodape"></div>
@@ -74,10 +105,30 @@
     </footer>
 
     <script>
-       function retomarFoco(servicoEscolhido) {
-        const retomarFoco_de_servico = window.document.getElementById(servicoEscolhido);
-        setTimeout(() => retomarFoco_de_servico.focus(), 0);
-       }
+        function mostrarProdutos() {
+            const produtos = window.document.getElementById('produtos-a-mostrar');
+            const icone = window.document.getElementById('sinal-icone');
+            const produtoTag = window.document.getElementById('produtos-tag');
+            produtos.classList.toggle('aberto');
+            icone.classList.toggle('aberto');
+            produtoTag.classList.toggle('aberto');
+        }
+        
+        function retomarFoco(servicoEscolhido) {
+            const retomarFoco_de_servico = window.document.getElementById(servicoEscolhido);
+            setTimeout(() => retomarFoco_de_servico.focus(), 0);
+        }
+
+        function mostrarMenu() {
+        const header = window.document.getElementById('header');
+        const main = window.document.getElementById('main');
+        const footer = window.document.getElementById('footer');
+        header.style.display = "none";
+        main.style.display = "none";
+        footer.style.display = "none";
+        const menu = window.document.getElementById('menu-pressionado');
+        menu.style.display = "grid";
+        }
     </script>
 </body>
 </html>

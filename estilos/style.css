@@ -1,15 +1,131 @@
 :root {
     --fundo: #e1f0f8;
-    --fundo1: #faead2;
     --texto: #1e2328;
     --botao: #25262a;
     --texto-botao: #e3e4f0;
+}
+
+@font-face {
+    font-family: 'Magical';
+    src: url(../fonts/magical_night_2/Magical\ Night.otf);
+}
+
+@font-face {
+    font-family: 'Dino';
+    src: url(../fonts/DinoFOnt/DinoFont.ttf);
+}
+
+@font-face {
+    font-family: 'Majesty';
+    src: url(../fonts/FB-Free-Majesty-Goldera/Majesty\ Goldera.otf);
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+div#menu-pressionado {
+    display: none;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 75px 85px 1fr;
+    background-color: white;
+    row-gap: 10px;
+}
+
+#menu-pressionado > #botao-fechar {
+    grid-column: 3;
+    place-self: center;
+}
+
+div.cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-column: span 3;
+    grid-row: 2;
+}
+
+div.cadastro > button {
+    width: 90%;
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 1em;
+}
+
+button#cadastrar {
+    background-color: var(--botao);
+    color: var(--texto-botao);
+}
+
+section#topicos {
+    grid-column: span 3;
+    grid-row: 3;
+}
+
+section#topicos h3 {
+    width: 90%;
+    font-size: 1.2em;
+    padding: 10px 0 10px 10px;
+    margin: 10px auto;
+    border-radius: 6px;
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--texto);
+}
+
+section#topicos h3:active {
+    background-color: rgba(132, 214, 247, 0.229);
+    border-radius: 0;
+    color: black;
+}
+
+div#produtos-container {
+    position: relative;
+}
+
+div#produtos-container > p {
+    position: absolute;
+    top: 50%;
+    right: 7.5%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+}
+
+div#produtos-container > p.aberto {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+h3#produtos-tag.aberto {
+    background-color: rgba(211, 211, 211, 0.300);
+}
+
+div#produtos-a-mostrar {
+    display: none;
+}
+
+div#produtos-a-mostrar.aberto {
+    display: block;
+    margin: 20px 0;
+}
+
+div#produtos-a-mostrar  h3 {
+    color: rgb(108, 107, 107);
+    font-size: 1em;
+}
+
+div#produtos-a-mostrar  h3:active {
+    color: black;
+}
+
+header, main, footer {
+    display: grid;
 }
 
 body, html {
@@ -17,19 +133,47 @@ body, html {
     height: 100vh;
 }
 
-header {
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 20vh;
-    place-items: start center;
-    background-color: white;
-    padding-bottom: 5vh;
+i {
+    font-size: 2em;
 }
 
-header h1 {
-    grid-column: 2;
+header {
+    background-color: white;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 75px 1fr;
+    padding-bottom: 20px;
+    place-items: center;
+}
+
+header#aviao-icone {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+header > h2 {
     text-align: center;
-    margin-top: 3vh;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+header#menu-icone {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+header > h2 {
+    letter-spacing: 1px;
+    font-size: 2.6em;
+    transition: 0.4s;
+    font-weight: 900;
+    font-family: 'Majesty';
+}
+
+header > h1 {
+    grid-column: span 3;
+    grid-row: 2;
+    text-align: center;
+    padding: 0 30px;
 }
 
 h1, h2, h3 {
@@ -37,7 +181,6 @@ h1, h2, h3 {
 }
 
 main {
-    display: grid;
     grid-template-columns: auto 80% auto;
     grid-template-rows: 500px 1000px;
     row-gap: 5vh;
@@ -103,13 +246,11 @@ section#servicos-section {
 }
 
 footer {
-    display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 10vh 40vh 30vh;
+    grid-template-rows: 10vh 40vh 1fr;
     row-gap: 3vh;
     padding: 20px 0;
     background-color: white;
-
 }
 
 footer > h2 {
@@ -168,7 +309,8 @@ footer > nav {
 nav > h3 {
     text-align: center;
     grid-row: 1;
-    font-size: 2em;
+    font-size: 1.8em;
+    margin: 0 10px;
 }
 
 footer > nav > ul {
@@ -180,8 +322,7 @@ footer > nav > ul {
     align-items: center;
 }
 
-i {
-    font-size: 1.8em;
+footer i {
     color: var(--texto);
     transition: 0.25s;
 }
@@ -191,7 +332,9 @@ i:active, i:hover {
 }
 
 #Viajour {
-    font-size: 1.6em;
+    font-size: 1.2em;
+    font-family: 'Majesty';
+    font-weight: 900;
 }
 
 
@@ -204,7 +347,7 @@ i:active, i:hover {
         height: 100%;
         background: var(--texto) url(https://cdn.pixabay.com/photo/2021/12/13/07/06/airplane-6867678_1280.jpg) no-repeat fixed;
         background-size: cover;
-        background-position: center top;
+        background-position: center center;
         
     }
     
