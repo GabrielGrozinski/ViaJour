@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="menu-pressionado">
-        <i id="botao-fechar" class="fa-solid fa-xmark"></i>
+        <i onclick="mostrarMenu()" id="botao-fechar" class="fa-solid fa-xmark"></i>
         
         <div class="cadastro">
             <button id="cadastrar" href="">Cadastrar</button>
@@ -24,14 +24,33 @@
                 <h3 id="produtos-tag">Produtos</h3>
                 <p id="sinal-icone">&gt;</p>
             </div>
-            <div id="produtos-a-mostrar">
-                <h3>Roteiro Automático</h3>
-                <h3>Cálculo de Custos</h3>
-                <h3>Monte sua Aventura</h3>
-            </div>
+            <article id="produtos-a-mostrar">
+                <div class="produtos-unicos">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Roteiro Automático</h3>
+                </div>
+
+                <div class="produtos-unicos">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <h3>Cálculo de Custos</h3>
+                </div>
+
+                <div class="produtos-unicos">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>Monte sua Aventura</h3>
+                </div>
+            </article>
             <h3>Documentação</h3>
             <h3>Preço</h3>
             <h3>Contato</h3>
+            <hr>
+            <article id="tema-container">
+                <h3>Tema</h3>
+                <div id="temas">
+                    <i onclick="mudarTema()" id="modo-escuro" class="fa-solid fa-moon"></i>
+                    <i onclick="mudarTema()" id="modo-claro" class="fa-solid fa-sun"></i>
+                </div>
+            </article>
         </section>
 
     </div>
@@ -94,10 +113,10 @@
         <nav>
             <h3>Descubra o mundo conosco <br> <strong><span id="Viajour">Viajour</span></strong> <br> Descubra, Planeje, Viaje</h3>
             <ul>
-                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://www.google.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.google.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="https://www.google.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.google.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
             </ul>
         </nav>
 
@@ -105,6 +124,17 @@
     </footer>
 
     <script>
+        const body = document.body;
+        const tema = localStorage.getItem('tema');
+        if (tema === 'escuro') {
+            body.classList.toggle('escuro');
+        }
+
+        function mudarTema() {
+            const isEscuro = body.classList.toggle('escuro');
+            localStorage.setItem('tema', isEscuro ? 'escuro' : 'claro');
+        }
+
         function mostrarProdutos() {
             const produtos = window.document.getElementById('produtos-a-mostrar');
             const icone = window.document.getElementById('sinal-icone');
@@ -123,11 +153,11 @@
         const header = window.document.getElementById('header');
         const main = window.document.getElementById('main');
         const footer = window.document.getElementById('footer');
-        header.style.display = "none";
-        main.style.display = "none";
-        footer.style.display = "none";
+        header.classList.toggle('fechado');
+        main.classList.toggle('fechado');
+        footer.classList.toggle('fechado');
         const menu = window.document.getElementById('menu-pressionado');
-        menu.style.display = "grid";
+        menu.classList.toggle('aberto');
         }
     </script>
 </body>
