@@ -53,12 +53,16 @@ body, html {
     font-family: 'Oswald', sans-serif;
 }
 
+header > nav, header > section, header > #produtos-desktop {
+    display: none;
+}
+
 div#menu-pressionado {
     display: none;
     min-height: 100vh;
     height: auto;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 75px 16vh 1fr;
+    grid-template-rows: 75px 100px 500px;
     background-color: var(--fundo-menu-pressionado);
     row-gap: 10px;
 }
@@ -84,11 +88,12 @@ div.cadastro {
 div.cadastro > button {
     width: 90%;
     border-radius: 6px;
-    padding: 1vw;
+    padding: 4px;
     text-align: center;
     letter-spacing: 0.5px;
-    font-size: 4.5vw;
+    font-size: 1em;
     transition: 0.3s;
+    margin: 0.5vh;
 }
 
 div.cadastro > button:active {
@@ -138,7 +143,7 @@ div#produtos-container > p {
     right: 7.5%;
     transform: translate(-50%, -50%);
     font-size: 1.8em;
-    color: var(--texto);
+    color: var(--texto-produtos);
 }
 
 div#produtos-container > p.aberto {
@@ -270,6 +275,17 @@ main {
     row-gap: 5vh;
 }
 
+.imagem {
+    grid-column: span 3;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    background: var(--texto) url(https://cdn.pixabay.com/photo/2021/12/13/07/06/airplane-6867678_1280.jpg) no-repeat fixed;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
 section#servicos-section {
     display: grid;
     grid-column: 2;
@@ -331,7 +347,7 @@ section#servicos-section {
 
 footer {
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 10vh 40vh 1fr;
+    grid-template-rows: 1fr 2fr 3fr;
     row-gap: 3vh;
     padding: 20px 0;
     background-color: var(--fundo-menu-pressionado);
@@ -385,9 +401,8 @@ footer > nav {
     display: grid;
     grid-column: span 3;
     grid-row: 3;
-    grid-template-rows: 5fr 4fr;
-    row-gap: 10px;
-    
+    grid-template-rows: 1fr 100px;
+    row-gap: 15px;  
 }
 
 nav > h3 {
@@ -399,6 +414,7 @@ nav > h3 {
 
 footer > nav > ul {
     display: flex;
+    align-self: flex-start;
     list-style: none;
     gap: 20px;
     grid-row: 2;
@@ -421,18 +437,164 @@ i:active, i:hover {
     font-weight: 900;
 }
 
+@media screen and (min-height: 768px) {
+footer > nav {
+    grid-template-rows: 1fr 200px;
+}
+}
+/* Rodapé para celulares/tablets com altura maior */
 
-@media screen and (max-width: 768px) {
+@media screen and (min-height: 900px) {
 
-    .imagem {
-        grid-column: span 3;
-        grid-row: 1;
-        width: 100%;
-        height: 100%;
-        background: var(--texto) url(https://cdn.pixabay.com/photo/2021/12/13/07/06/airplane-6867678_1280.jpg) no-repeat fixed;
-        background-size: cover;
-        background-position: center center;
-        
-    }
+main {
+grid-template-rows: 1fr 2fr;
+}
+
+.servicos-article {
+    font-size: 1.4em;
+}
+}
+/* Tablets */
+
+@media screen and (min-width: 568px) {
+main {
+grid-template-rows: 1fr 2fr;
+}
+
+.servicos-article {
+    font-size: 1.4em;
+}
+}
+/* Tablets ou celulares no modo paisagem */
+
+@media screen and (min-width: 850px) {
+header > i, header > h2 {
+    font-size: 3em;
+}
+
+#menu-pressionado > #botao-fechar {
+    font-size: 3em;
+}
+}
+/* Tablets Grandes */
+
+@media screen and (min-width: 1366px) {
+    
+header #menu-icone {display: none;}
+
+header {
+    grid-template-columns: 1fr 1fr 4fr 2fr;
+    grid-template-rows: 1fr auto 2fr;
+    place-items: center normal;
+    place-content: center;
+}
+
+header > h1 {
+    grid-column: span 4;
+    grid-row: 3;
+}
+
+header > #aviao-icone, header > h2 {
+    justify-self: end;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+header > #aviao-icone {
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+header > h2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+header > section {
+    display: flex;
+    justify-content: space-around;
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.topicos-desktop {
+    color: var(--texto-produtos);
+    font-weight: 300;
+    font-size: 1.4em;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 0.4em;
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.400);
+    border-radius: 10px;
+}
+
+.topicos-desktop:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+span#seta-desktop {
+    display: inline-block;
+    transform: rotate(90deg) translate(25%, -5%);
+    transition: 0.1s ease;
+}
+
+.topicos-desktop:hover span#seta-desktop {
+    transform: rotate(-90deg) translate(-25%, 5%);
+}
+
+header > div.produtos-desktop-ativado {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    justify-self: start;
+    min-height: 20vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr 1f 1fr 1fr;
+    background-color: var(--fundo-menu-pressionado);
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
+header > nav {
+    justify-self: end;
+    display: flex;
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.cadastro-desktop {
+    color: var(--texto-botao);
+    font-weight: 300;
+    font-size: 1.2em;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 0.3em 0.5em;
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.400);
+    border-radius: 15px;
+    background-color: var(--botao);
+    border: 2px solid var(--texto-tag-pressionada);
+}
+
+.cadastro-desktop:hover, #c-desktop:hover {
+    background-color: lightskyblue;
+    border-color: var(--fundo-menu-pressionado);
+    color: black;
+    scale: 1.1;
+}
+
+.cadastro-desktop:active {
+    transform: scale(0.94);
+}
+
+#c-desktop {
+    color: var(--texto);
+    background-color: var(--fundo-menu-pressionado);
+}
+
+
+
+}
+
+@media screen and (min-height: 1024px) {
     
 }
