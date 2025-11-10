@@ -55,22 +55,74 @@
 
     </div>
 
-    <header id="header">
-        <i id="aviao-icone" class="fa-solid fa-plane"></i>
-        <h2>ViaJour</h2>
-        <section>
-            <article class="topicos-desktop">Produtos <span id="seta-desktop">&gt;</span></article>
-            <h3 class="topicos-desktop">Documentação</h3>
-            <h3 class="topicos-desktop">Preço</h3>
-            <h3 class="topicos-desktop">Contato</h3>
-        </section>
-        <nav>
-            <h3 id="l-desktop" class="cadastro-desktop">Fazer Login</h3>
-            <h3 id="c-desktop" class="cadastro-desktop">Cadastrar</h3>
-        </nav>
-        <div id="produtos-desktop">
-
-        </div>
+    <header onmouseleave="removerProdutosDesktop()" id="header">
+            <i id="aviao-icone" class="fa-solid fa-plane"></i>
+            <h2>ViaJour</h2>
+            <section>
+                <article onmouseenter="mostrarProdutosDesktop()" id="produto-desktop-tag" class="topicos-desktop">Produtos <span id="seta-desktop">&gt;</span></article>
+                <h3 onmouseenter="removerProdutosDesktop()" class="topicos-desktop">Documentação</h3>
+                <h3 onmouseenter="removerProdutosDesktop()" class="topicos-desktop">Preço</h3>
+                <h3 onmouseenter="removerProdutosDesktop()" class="topicos-desktop">Contato</h3>
+            </section>
+            <nav onmouseenter="removerProdutosDesktop()">
+                <h3 id="l-desktop" class="cadastro-desktop">Fazer Login</h3>
+                <h3 id="c-desktop" class="cadastro-desktop">Cadastrar</h3>
+            </nav>
+            <div onmouseleave="mostrarProdutosDesktop()" id="produtos-desktop-container">
+                <h2>Ferramentas I.A</h2>
+                <div class="produtos-pai" id="ferramentas-ia">
+                    <div>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Roteiro Automático</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Chat Auxiliar</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Busca Paraíso</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Viagem Certa</h3>
+                    </div>
+                </div>
+                <h2>Custos</h2>
+                <div class="produtos-pai" id="custo">
+                    <div>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h3>Cálculo de Custos</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h3>Cálculo de Custos</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h3>Cálculo de Custos</h3>
+                    </div>
+                </div>
+                <h2>Planejamento</h2>
+                <div class="produtos-pai" id="planejament">
+                    <div>
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <h3>Monte sua Aventura</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <h3>Monte sua Aventura</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <h3>Monte sua Aventura</h3>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <h3>Monte sua Aventura</h3>
+                    </div>
+                </div>
+            </div>
         <i id="menu-icone" onclick="mostrarMenu()" class="fa-solid fa-bars"></i>
         <h1>Descubra, Planeje, Viaje com <br> ViaJour</h1>
     </header>
@@ -133,10 +185,21 @@
             </ul>
         </nav>
 
-
     </footer>
 
     <script>
+        const container = window.document.getElementById('produtos-desktop-container');
+        const produtoTag = window.document.getElementById('produto-desktop-tag');
+        function removerProdutosDesktop() {
+            container.classList.remove('container-ativado');
+            produtoTag.classList.remove('azul-ativado');
+        }
+
+        function mostrarProdutosDesktop() {
+            container.classList.toggle('container-ativado');
+            produtoTag.classList.toggle('azul-ativado');
+        }
+
         const body = document.body;
         const tema = localStorage.getItem('tema');
         if (tema === 'escuro') {

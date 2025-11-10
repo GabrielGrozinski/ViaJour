@@ -53,8 +53,18 @@ body, html {
     font-family: 'Oswald', sans-serif;
 }
 
-header > nav, header > section, header > #produtos-desktop {
+header > nav, header > section, footer > div#temas-desktop {
     display: none;
+}
+
+header > #produtos-desktop-container {
+  display: grid;
+  opacity: 0;
+  transform: translateY(-20px); 
+  pointer-events: none; 
+  transition: all 0.4s ease; 
+  height: 0;
+  overflow: hidden;
 }
 
 div#menu-pressionado {
@@ -202,11 +212,11 @@ div#temas {
     transform: translate(-30%, -50%);
 }
 
-div#temas i#modo-escuro {
+div#temas i#modo-escuro, div#temas-desktop i#modo-escuro {
     color: var(--lua-modo-escuro);
 }
 
-div#temas i#modo-claro {
+div#temas i#modo-claro, div#temas-desktop i#modo-claro {
     color: var(--sol-modo-claro)
 }
 
@@ -528,6 +538,11 @@ header > section {
     border-radius: 10px;
 }
 
+#produto-desktop-tag.azul-ativado {
+    background-color: lightskyblue;
+    color: black;
+}
+
 .topicos-desktop:hover {
     background-color: lightskyblue;
     color: black;
@@ -543,16 +558,59 @@ span#seta-desktop {
     transform: rotate(-90deg) translate(-25%, 5%);
 }
 
-header > div.produtos-desktop-ativado {
+header > #produtos-desktop-container.container-ativado {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    height: auto;
     grid-column: 3 / 4;
     grid-row: 2;
-    justify-self: start;
     min-height: 20vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row: 1fr 1f 1fr 1fr;
+    grid-row: 10% 90%;
     background-color: var(--fundo-menu-pressionado);
-    border: 2px solid gray;
+    border: 2px outset var(--texto-tag-pressionada) ;
     border-radius: 15px;
+    padding-bottom: 1vh;
+}
+
+header > #produtos-desktop-container > h2 {
+    grid-row: 1;
+    justify-self: center;
+}
+
+header > #produtos-desktop-container > div.produtos-pai {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+header > #produtos-desktop-container > div.produtos-pai > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px outset rgba(0, 0, 0, 0.699);
+    border-radius: 4px;
+    padding: 0 0.5vh;
+    margin: 0.5vh 0;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+header > #produtos-desktop-container > div.produtos-pai > div:hover {
+    background-color: lightskyblue;
+    transform: scale(1.05);
+}
+
+header > #produtos-desktop-container > div.produtos-pai > div > i {
+    font-size: 1em;
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.326);
+}
+
+header > #produtos-desktop-container > div.produtos-pai > div > h3 {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 5px;
 }
 
 header > nav {
@@ -590,7 +648,6 @@ header > nav {
     color: var(--texto);
     background-color: var(--fundo-menu-pressionado);
 }
-
 
 
 }
