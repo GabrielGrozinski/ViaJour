@@ -125,18 +125,29 @@
             </div>
         <i id="menu-icone" onclick="mostrarMenu()" class="fa-solid fa-bars"></i>
         <h1>Descubra, Planeje, Viaje com <br> ViaJour</h1>
+        <div id="temas-desktop">
+            <i onclick="mudarTema()" id="modo-escuro" class="fa-solid fa-moon"></i>
+            <i onclick="mudarTema()" id="modo-claro" class="fa-solid fa-sun"></i>
+        </div>
     </header>
     
     <main id="main">
         <section class="imagem"></section>
+        <section class="imagem-desktop">
+            <article id="imagem-1"></article>
+            <article id="imagem-2"></article>
+            <article id="imagem-3"></article>
+        </section>
+
         <section id="servicos-section">
             
             <article id="servico-1" class="servicos-article" tabindex="0">
                 <div class="descricao">
                     <h2>Roteiro Automático</h2>
                     <h3>Gratuito</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique enim illo atque maiores aliquam illum doloremque quidem fuga consequatur molestias autem praesentium in dolor quod fugit, eos, nulla nisi quam.</p>
                     <button id="botao-1" onclick="retomarFoco('servico-1')" class="botao-servicos">
-                        Agendar
+                        Preparar
                     </button>
                 </div>
                 <img src="https://cdn.pixabay.com/photo/2023/05/28/12/08/suitcase-8023523_1280.png" alt="Serviços" class="servico-imagens">
@@ -146,6 +157,7 @@
                 <div class="descricao">
                     <h2>Cálculo de Custos</h2>
                     <h3>Gratuito</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique enim illo atque maiores aliquam illum doloremque quidem fuga consequatur molestias autem praesentium in dolor quod fugit, eos, nulla nisi quam.</p>
                     <button id="botao-2" class="botao-servicos" onclick="retomarFoco('servico-2')">
                         Ver custos
                     </button>
@@ -157,6 +169,7 @@
                 <div class="descricao">
                     <h2>Monte sua Aventura</h2>
                     <h3>Gratuito</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique enim illo atque maiores aliquam illum doloremque quidem fuga consequatur molestias autem praesentium in dolor quod fugit, eos, nulla nisi quam.</p>
                     <button id="botao-3" onclick="retomarFoco('servico-3')" class="botao-servicos">
                         Começar
                     </button>
