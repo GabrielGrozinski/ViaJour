@@ -497,7 +497,7 @@ footer > nav {
 
 @media screen and (min-width: 568px) and (max-width: 1024px) {
 main {
-grid-template-rows: 750px 1000px;
+grid-template-rows: 350px 1000px;
 }
 
 .servicos-article {
@@ -525,7 +525,7 @@ footer {
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 
 main {
-grid-template-rows: 850px 850px;
+grid-template-rows: 350px 850px;
 }
 
 .servicos-article {
