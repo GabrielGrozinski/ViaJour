@@ -53,20 +53,9 @@ body, html {
     font-family: 'Oswald', sans-serif;
 }
 
-header > nav, header > section {
-    display: none;
-}
 
-header > #produtos-desktop-container {
-  display: grid;
-  opacity: 0;
-  transform: translateY(-20px); 
-  pointer-events: none; 
-  transition: all 0.4s ease; 
-  height: 0;
-  overflow: hidden;
-}
-
+/* Menu-Pressionado. Só é ativado em mobiles */
+/* 1/2 Menu-Pressionado */
 div#menu-pressionado {
     display: none;
     min-height: 100vh;
@@ -219,21 +208,47 @@ div#temas i#modo-escuro, div#temas-desktop i#modo-escuro {
 div#temas i#modo-claro, div#temas-desktop i#modo-claro {
     color: var(--sol-modo-claro)
 }
+/* 2/2 Menu-Pressionado */
+
 
 header, main, footer {
     display: grid;
 }
+/* Grid por padrão */
 
+
+/* Conteúdos que só mostram no Desktop */
+header > nav, header > section, header > div#temas-desktop {
+    display: none;
+}
+
+header > #produtos-desktop-container {
+  display: grid;
+  opacity: 0;
+  transform: translateY(-20px); 
+  pointer-events: none; 
+  transition: all 0.4s ease; 
+  height: 0;
+  overflow: hidden;
+}
+
+
+/* Conteúdos que somem ao clicar no ícone de Menu */
 header.fechado, main.fechado, footer.fechado {
     display: none;
 }
 
+
+/* Valor padrão dos ícones */
 i {
     font-size: 2em;
     color: var(--botao);
     transition: 0.5s;
 }
 
+
+/* Header */
+/* 1/2 Header */
 header {
     background-color: var(--fundo-menu-pressionado);
     grid-template-columns: 1fr 4fr 1fr;
@@ -242,12 +257,12 @@ header {
     place-items: center;
 }
 
-header#aviao-icone {
+header > #aviao-icone {
     grid-row: 1;
     grid-column: 1;
 }
 
-header#menu-icone {
+header > #menu-icone {
     grid-row: 1;
     grid-column: 3;
 }
@@ -277,6 +292,7 @@ header > h1 {
 h1, h2, h3 {
     color: var(--texto);
 }
+/* 2/2 Header */
 
 main {
     background-color: var(--fundo);
@@ -360,9 +376,23 @@ section#servicos-section {
     grid-row: 1;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: o.5s;
+    transition: 0.5s;
+    background: var(--fundo-menu-pressionado) center center no-repeat;
+    background-size: cover;
 }
+
+#servico-roteiro-automatico {
+    background-image: url(https://cdn.pixabay.com/photo/2023/05/28/12/08/suitcase-8023523_1280.png);
+}
+
+#servico-calculo-custos {
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/01/15/03/global-2566114_1280.jpg);   
+}
+
+#servico-sua-aventura {
+    background-image: url(https://cdn.pixabay.com/photo/2022/05/28/14/09/landscape-7227383_1280.jpg);   
+}
+
 
 footer {
     grid-template-columns: 1fr 5fr 1fr;
@@ -396,7 +426,7 @@ footer > .rodape {
 footer > .rodape > .imagem-rodape {
     background: center center no-repeat;
     background-size: cover;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.300);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.300);
 }
 
 #imagem-rodape-1 {
@@ -463,36 +493,61 @@ footer > nav {
 }
 /* Rodapé para celulares/tablets com altura maior */
 
-@media screen and (min-height: 900px) {
-
+@media screen and (min-width: 568px) and (max-width: 1024px) {
 main {
-grid-template-rows: 1fr 2fr;
+grid-template-rows: 750px 1000px;
 }
 
 .servicos-article {
     font-size: 1.4em;
 }
-}
-/* Tablets */
 
-@media screen and (min-width: 568px) {
-main {
-grid-template-rows: 1fr 2fr;
+#servico-roteiro-automatico {
+    background-position: 50% 85%;
 }
 
-.servicos-article {
-    font-size: 1.4em;
+#servico-calculo-custos {
+    background-position: 50% 20%;
+}
+
+#servico-sua-aventura {
+    background-position: 50% 15%;
+}
+
+footer {
+    grid-template-rows: 1fr 5fr 3fr;
 }
 }
 /* Tablets ou celulares no modo paisagem */
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+
+main {
+grid-template-rows: 850px 850px;
+}
+
 header > i, header > h2 {
     font-size: 3em;
 }
 
 #menu-pressionado > #botao-fechar {
     font-size: 3em;
+}
+
+#servico-roteiro-automatico {
+    background-position: 50% 85%;
+}
+
+#servico-calculo-custos {
+    background-position: 50% 20%;
+}
+
+#servico-sua-aventura {
+    background-position: 50% 10%;
+}
+
+footer {
+    grid-template-rows: 1fr 5fr 3fr;
 }
 }
 /* Tablets Grandes */
@@ -508,7 +563,7 @@ header {
     place-content: center;
 }
 
-header > #temas-desktop {
+header > div#temas-desktop {
     display: flex;
     grid-column: 4;
     grid-row: 1;
@@ -521,8 +576,6 @@ header > h1 {
 
 header > #aviao-icone, header > h2 {
     justify-self: end;
-    grid-column: 1;
-    grid-row: 1;
 }
 
 header > #aviao-icone {
@@ -573,6 +626,10 @@ span#seta-desktop {
     transform: rotate(-90deg) translate(-25%, 5%);
 }
 
+span#seta-desktop.seta-virada {
+    transform: rotate(-90deg) translate(-25%, 5%);
+}
+
 header > #produtos-desktop-container.container-ativado {
     opacity: 1;
     transform: translateY(0);
@@ -580,7 +637,7 @@ header > #produtos-desktop-container.container-ativado {
     height: auto;
     grid-column: 3 / 4;
     grid-row: 2;
-    min-height: 20vh;
+    min-height: 20%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row: 10% 90%;
     background-color: var(--fundo-menu-pressionado);
@@ -717,8 +774,23 @@ section#servicos-section {
     grid-template-rows: 30vh;
 }
 
-.servico-imagens {
+main > section#servicos-section > article.servicos-article > article.servico-imagens {
     grid-column: 2;
+}
+
+main > section#servicos-section > article.servicos-article > article#servico-roteiro-automatico {
+    background-image: url(https://cdn.pixabay.com/photo/2023/03/16/08/42/camping-7856198_1280.jpg);
+    background-position: center 40%;
+}
+
+main > section#servicos-section > article.servicos-article > article#servico-calculo-custos {
+    background-image: url(https://cdn.pixabay.com/photo/2018/03/10/18/03/laptop-3214756_1280.png); 
+    background-position: center center;  
+}
+
+main > section#servicos-section > article.servicos-article > article#servico-sua-aventura {
+    background-image: url(https://cdn.pixabay.com/photo/2019/03/19/14/50/fantasy-4065898_1280.jpg);
+    background-position: 50% 20%;
 }
 
 .descricao {
@@ -755,9 +827,17 @@ section#servicos-section:has(.servicos-article:focus) .servicos-article:not(:foc
     color: var(--texto);
 }
 
-.servicos-article:focus .servico-imagens {
+main > section#servicos-section > article.servicos-article:focus > article.servico-imagens {
     grid-column: 1;
     grid-row: 2;
+}
+
+main > section#servicos-section > article.servicos-article:focus > article#servico-roteiro-automatico {
+    background-position: center 90%;
+}
+
+main > section#servicos-section > article.servicos-article:focus > article#servico-sua-aventura {
+    background-position: center 31.5%;
 }
 
 .servicos-article:focus h3 {
@@ -793,7 +873,4 @@ footer > .rodape {
 
 
 }
-
-@media screen and (min-height: 1024px) {
-    
-}
+/* Desktop */
