@@ -21,7 +21,7 @@ body.escuro {
     --texto-tag-pressionada: white;
     --fundo-tag-pressionada: rgba(132, 214, 247, 0.645);
     --fundo-tag-aberta: rgba(211, 211, 211, 0.300);
-    --texto-produtos: rgb(108, 107, 107);
+    --texto-produtos: rgb(186, 185, 185);
     --lua-modo-escuro: rgb(26, 26, 255);
     --sol-modo-claro: gray;
 }
@@ -166,6 +166,7 @@ article#produtos-a-mostrar h3 {
     color: var(--texto-produtos);
     font-size: 1em;
     padding-left: 9vw;
+    font-weight: 400;
 }
 
 article#produtos-a-mostrar .produtos-unicos:active i {
@@ -256,6 +257,7 @@ header {
     padding-bottom: 20px;
     place-items: center;
 }
+
 header > #aviao-icone {
     grid-row: 1;
     grid-column: 1;
@@ -658,6 +660,7 @@ header > #produtos-desktop-container.container-ativado {
 header > #produtos-desktop-container > h2 {
     grid-row: 1;
     justify-self: center;
+    text-shadow: 1px 1px 1px var(--fundo-menu-pressionado);
 }
 
 header > #produtos-desktop-container > div.produtos-pai {
@@ -692,6 +695,7 @@ header > #produtos-desktop-container > div.produtos-pai > div > h3 {
     font-size: 1em;
     font-weight: 400;
     margin-left: 5px;
+    text-shadow: 1px 1px 1px var(--fundo-menu-pressionado);
 }
 
 header > nav {
