@@ -2,164 +2,146 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Chat IA Local</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat IA - WebLLM</title>
 
-    <!-- TRANSFORMERS.JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@xenova/transformers/dist/transformers.min.js"></script>
+    <!-- WebLLM -->
+    <script src="https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@latest/dist/web-llm.min.js"></script>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            padding: 40px;
+            background: #f1f1f1;
+            margin: 0;
+            padding: 0;
         }
 
         .chat-container {
-            width: 420px;
+            max-width: 600px;
+            margin: 40px auto;
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        .messages {
-            height: 420px;
+        #chat {
+            height: 400px;
             overflow-y: auto;
             border: 1px solid #ddd;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 8px;
             background: #fafafa;
         }
 
-        .msg {
-            margin: 8px 0;
-            padding: 8px 10px;
-            border-radius: 8px;
-            max-width: 80%;
+        .message {
+            margin-bottom: 12px;
+            line-height: 1.4;
         }
 
         .user {
-            background: #d1e7ff;
-            align-self: flex-end;
+            text-align: right;
+            color: #0066ff;
         }
 
         .bot {
-            background: #e9e9e9;
+            text-align: left;
+            color: #333;
         }
 
         .input-area {
+            margin-top: 20px;
             display: flex;
             gap: 10px;
         }
 
         input {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
-            border: 1px solid #ccc;
+            border: 1px solid #aaa;
             font-size: 16px;
         }
 
         button {
-            padding: 10px 16px;
+            padding: 12px 20px;
             border: none;
-            background: #0078ff;
+            background: #0066ff;
             color: white;
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
         }
-
-        button:disabled {
-            background: #9bbdf7;
-            cursor: not-allowed;
-        }
-
-        button:hover:not(:disabled) {
-            background: #005fd6;
-        }
     </style>
 </head>
 <body>
 
-<div class="chat-container">
-    <div class="messages" id="messages"></div>
+    <div class="chat-container">
+        <h1>Chat IA</h1>
 
-    <div class="input-area">
-        <input id="userInput" placeholder="Digite sua mensagem..." />
-        <button id="sendBtn" onclick="sendMessage()">Enviar</button>
+        <div id="chat"></div>
+
+        <div class="input-area">
+            <input id="msg" type="text" placeholder="Digite sua mensagem...">
+            <button id="send">Enviar</button>
+        </div>
     </div>
-</div>
 
+    <script>
+        const chat = document.getElementById("chat");
+        const input = document.getElementById("msg");
+        const send = document.getElementById("send");
 
-<script>
-let generator;
-let iaPronta = false;
+        // Inicializa a IA
+        const engine = new webllm.ChatModule();
 
-// Inicializa o modelo (gpt2 pequeno)
-async function loadModel() {
-    addMessage("bot", "🔄 Carregando IA... Isso pode levar 5–10 segundos.");
+        async function initModel() {
+            addMessage("bot", "Carregando modelo... isso pode levar alguns segundos ⏳");
 
-    const btn = document.getElementById("sendBtn");
-    btn.disabled = true;
-    btn.innerText = "Carregando...";
+            await engine.reload("gemma-2b-it-q4f32_1-MLC");
 
-    // Carrega o modelo
-    generator = await window.transformers.pipeline(
-        "text-generation",
-        "Xenova/distilgpt2"  // bom desempenho + leve
-    );
+            addMessage("bot", "Modelo carregado! Pode perguntar 😊");
+        }
+        initModel();
 
-    iaPronta = true;
+        // Envia mensagem
+        send.onclick = () => handleUserMessage();
+        input.addEventListener("keydown", e => {
+            if (e.key === "Enter") handleUserMessage();
+        });
 
-    btn.disabled = false;
-    btn.innerText = "Enviar";
+        function addMessage(sender, text) {
+            const msg = document.createElement("div");
+            msg.className = "message " + sender;
+            msg.textContent = text;
+            chat.appendChild(msg);
+            chat.scrollTop = chat.scrollHeight;
+        }
 
-    addMessage("bot", "✨ IA carregada! Pode começar a conversar.");
-}
+        async function handleUserMessage() {
+            const text = input.value.trim();
+            if (!text) return;
 
-function addMessage(sender, text) {
-    const messages = document.getElementById("messages");
-    const div = document.createElement("div");
-    div.className = "msg " + sender;
-    div.innerText = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-}
+            addMessage("user", text);
+            input.value = "";
 
-async function sendMessage() {
-    const input = document.getElementById("userInput");
+            const reply = await engine.chat.completions.create({
+                messages: [{ role: "user", content: text }],
+                stream: true,
+            });
 
-    if (!iaPronta) {
-        addMessage("bot", "⏳ A IA ainda está carregando. Aguarde um momento...");
-        return;
-    }
+            let botText = "";
+            addMessage("bot", ""); // placeholder
+            const botMsg = chat.lastChild;
 
-    const text = input.value.trim();
-    if (!text) return;
-
-    addMessage("user", text);
-    input.value = "";
-
-    // Gera resposta
-    const output = await generator(text, {
-        max_new_tokens: 60,
-        temperature: 0.8,
-        top_p: 0.9
-    });
-
-    const reply = output[0].generated_text.replace(text, "").trim();
-    addMessage("bot", reply);
-}
-
-// Carrega IA ao abrir a página
-loadModel();
-</script>
+            for await (const chunk of reply) {
+                const delta = chunk.choices[0]?.delta?.content || "";
+                botText += delta;
+                botMsg.textContent = botText;
+                chat.scrollTop = chat.scrollHeight;
+            }
+        }
+    </script>
 
 </body>
 </html>
