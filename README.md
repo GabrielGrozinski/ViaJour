@@ -296,6 +296,21 @@ This project was designed with scalability in mind, allowing several features to
 
 ---
 
+### 💰 Monetization Strategies
+- 📢 **Advertisements**  
+  Display targeted travel-related ads (hotels, flights, experiences, and services), optimized based on user preferences and behavior.
+
+- 💎 **Subscription Plans**  
+  Offer premium subscriptions with exclusive features such as:
+  - Unlimited AI-generated itineraries
+  - Advanced filters and personalization
+  - Ad-free experience
+  - Priority access to new features
+
+These monetization options allow the platform to grow sustainably while maintaining a high-quality user experience.
+
+---
+
 ## 📱 Other Projects
 
 In addition to this project, I have also developed a **React Native** application called **Mistura Boa**, a mobile app focused on recipes and cooking experiences.
