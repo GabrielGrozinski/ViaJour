@@ -1,51 +1,50 @@
 # 🛂 ViaJour
 
-This project is a travel platform built with **React** and **Tailwind CSS**, combining **artificial intelligence**, **Supabase**, and **responsive design** to deliver a modern and engaging user experience.  
-The primary goal is to showcase a scalable architecture, clean code practices, and a polished UI, serving as a **trial version of a professional-grade travel application**.
+Este projeto é uma plataforma de viagens construída com **React** e **Tailwind CSS**, combinando **inteligência artificial**, **Supabase** e **design responsivo** para oferecer uma experiência de usuário moderna e envolvente.  
+O principal objetivo é demonstrar uma arquitetura escalável, boas práticas de código limpo e uma interface refinada, servindo como uma **versão de teste de uma aplicação de viagens em nível profissional**.
 
 ---
 
-## Features
+## Funcionalidades
 
-- 🔐 **Supabase Authentication**
-  - Email and password login and registration
-  - Google authentication
-  - User profile management with photo and name
-- 🧠 **AI Generator**
-  - Generates travel itineraries and destination suggestions
-- 🍁 **Long-Term Content Preservation**
-  - Hundreds of travel possibilities, including Christmas trips, romantic getaways, budget trips, and seven-day itineraries
-  - Unlockable user icons
-- ☁️ **Supabase Database Integration**
-  - User data storage, including travel preferences, number of trips taken, typical group size, and more
-  - Persistent user subscriptions
-- 💅 **Responsive Design**
-  - Styled with Tailwind CSS, following a mobile-first approach
-- **Products**
-  - Travel cost calculator
-  - Custom itinerary creation
-  - PDF download of itineraries
-  - Search for pre-created trips and itineraries
-  - Auxiliary chat assistant
-  - Dark mode and light mode support
+- 🔐 **Autenticação com Supabase**
+  - Login e cadastro com email e senha
+  - Autenticação com Google
+  - Gerenciamento de perfil do usuário com foto e nome
+- 🧠 **Gerador com IA**
+  - Geração de roteiros de viagem e sugestões de destinos
+- 🍁 **Preservação de Conteúdo a Longo Prazo**
+  - Centenas de possibilidades de viagens, incluindo viagens de Natal, viagens românticas, viagens baratas e viagens de sete dias
+- ☁️ **Integração com Banco de Dados Supabase**
+  - Armazenamento de dados do usuário, incluindo preferências de viagem, número de viagens realizadas, tamanho médio do grupo e muito mais
+  - Assinaturas de usuários persistentes
+- 💅 **Design Responsivo**
+  - Estilizado com Tailwind CSS, seguindo a abordagem mobile-first
+- **Produtos**
+  - Calculadora de custos de viagem
+  - Criação de roteiros personalizados
+  - Download em PDF dos roteiros
+  - Busca por viagens e roteiros pré-criados
+  - Chat assistente auxiliar
+  - Suporte a modo escuro e modo claro
 
 ---
 
-## Libraries / Tools
+## Bibliotecas / Ferramentas
 
-This project uses the following libraries and tools:
+Este projeto utiliza as seguintes bibliotecas e ferramentas:
 
-- [React](https://react.dev/) for the front-end application
-- [TypeScript](https://www.typescriptlang.org/) for static typing  
-- [Supabase](https://supabase.com/) for authentication and database management  
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- Additional smaller services such as Flatpickr, html2canvas, jsPDF, react-spinner, Font Awesome for icons, and others
+- [React](https://react.dev/) para a aplicação front-end
+- [TypeScript](https://www.typescriptlang.org/) para tipagem estática  
+- [Supabase](https://supabase.com/) para autenticação e gerenciamento de banco de dados  
+- [Tailwind CSS](https://tailwindcss.com/) para estilização
+- Serviços adicionais menores como Flatpickr, html2canvas, jsPDF, react-spinner, Font Awesome para ícones, entre outros
 
 ---
 
 ## Screenshots
 
-### Home Page
+### Página Inicial
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/1.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/1.jpg) |
@@ -68,21 +67,21 @@ This project uses the following libraries and tools:
 
 ---
 
-### Sign Up / Login
+### Cadastro / Login
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/5.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/7.jpg) |
 
 ---
 
-### Error Handling
+### Tratamento de Erros
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/7.png) |
 
 ---
 
-### Main Dashboard & Assistant Chat
+### Dashboard Principal & Chat Assistente
 | Desktop | Desktop | Desktop |
 |--------|--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/8.png) | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/9.png) | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/10.png) |
@@ -93,7 +92,7 @@ This project uses the following libraries and tools:
 
 ---
 
-### User Settings
+### Configurações do Usuário
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/12.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/12.jpg) |
@@ -116,35 +115,35 @@ This project uses the following libraries and tools:
 
 ---
 
-### Settings Search
+### Busca nas Configurações
 | Mobile |
 |--------|
 | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/17.jpg) |
 
 ---
 
-### Language & Currency Switch
+### Alternância de Idioma & Moeda
 | Mobile | Mobile |
 |--------|--------|
 | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/18.jpg) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/19.jpg) |
 
 ---
 
-### Automatic Itinerary Generator
+### Gerador Automático de Roteiros
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/19.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/20.jpg) |
 
 ---
 
-### Destination Recommendation
+### Recomendação de Destinos
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/20.png) |
 
 ---
 
-### Calculator
+### Calculadora
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/22.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/21.jpg) |
@@ -157,8 +156,8 @@ This project uses the following libraries and tools:
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/25.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/22.jpg) |
 
-### Save Calculator
-Travel costs can also be saved for later reuse in the **“Build Your Adventure”** section.
+### Salvar Custos
+Os custos de viagem também podem ser salvos para reutilização posterior na seção **“Construa Sua Aventura”**.
 
 | Desktop |
 |--------|
@@ -166,7 +165,7 @@ Travel costs can also be saved for later reuse in the **“Build Your Adventure�
 
 ---
 
-### Build Your Adventure
+### Monte Sua Aventura
 | Desktop | Desktop |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/26.png) | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/27.png) |
@@ -177,63 +176,63 @@ Travel costs can also be saved for later reuse in the **“Build Your Adventure�
 
 ---
 
-### Budget Trips
+### Viagens Baratas
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/30.png) |
 
 ---
 
-### Romantic Trips
+### Viagens Românticas
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/31.png) |
 
 ---
 
-### Christmas Trips
+### Viagens de Natal
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/32.png) |
 
 ---
 
-### Seven-Day Trips
+### Viagens de Sete Dias
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/33.png) |
 
 ---
 
-### Cost Filter
+### Filtro por Custo
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/34.png) |
 
 ---
 
-### Trips Filtered by Nationality
+### Viagens Filtradas por Nacionalidade
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/35.png) |
 
 ---
 
-### Trips Filtered by Search
+### Viagens Filtradas por Busca
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/36.png) |
 
 ---
 
-### Mobile Trips View
+### Visualização de Viagens no Mobile
 | Mobile |
 |--------|
 | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/24.jpg) |
 
 ---
 
-### Trip Card
+### Card de Viagem
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/37.png) | ![Mobile](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/mobile/25.jpg) |
@@ -244,82 +243,82 @@ Travel costs can also be saved for later reuse in the **“Build Your Adventure�
 
 ---
 
-### Favorite Trips
+### Viagens Favoritas
 | Desktop |
 |--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/42.png) |
 
 ---
 
-### Travel Itinerary PDF
+### PDF do Roteiro de Viagem
 | Desktop | Desktop |
 |--------|--------|
 | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/40.png) | ![Desktop](https://raw.githubusercontent.com/GabrielGrozinski/viajour-images/master/desktop/41.png) |
 
 ---
 
-## 👨‍💻 About Me
+## 👨‍💻 Sobre Mim
 
-I’m a highly motivated Brazilian **Full Stack Developer** with a strong passion for building scalable, well-structured, and user-focused applications.  
+Sou um **Desenvolvedor Full Stack**, altamente motivado e com grande paixão por criar aplicações escaláveis, bem estruturadas e centradas no usuário.  
 
-I’m constantly learning, experimenting with new technologies, and challenging myself to grow as a developer. My goal is to contribute to impactful projects, collaborate with talented teams, and continuously improve both technically and professionally.
+Estou em constante evolução como desenvolvedor, buscando aprender novas tecnologias, aprimorar boas práticas e enfrentar desafios técnicos. Meu objetivo é contribuir para projetos impactantes, colaborar com equipes talentosas e crescer de forma contínua, tanto técnica quanto profissionalmente.
 
 ---
 
-## 📬 Contact
+## 📬 Contato
 
-Feel free to reach out for questions, suggestions, or professional opportunities.
+Sinta-se à vontade para entrar em contato para dúvidas, sugestões ou oportunidades profissionais.
 
 - **LinkedIn:** [Gabriel Grozinski](https://www.linkedin.com/in/gabriel-grozinski/)
 - **Email:** gabrielgrozinski@gmail.com
+- **Celular:** +55 11 94444--5511
 
 ---
 
-## 🚀 Future Improvements & Ideas
+## 🚀 Melhorias Futuras & Ideias
 
-This project was designed with scalability in mind, allowing several features to be implemented in future iterations, such as:
+Este projeto foi desenvolvido com escalabilidade em mente, permitindo que diversas funcionalidades sejam implementadas em futuras iterações, como:
 
-- 🏆 **User Ranking System**  
-  A gamified ranking based on user activity, completed trips, created itineraries, and engagement within the platform.
+- 🏆 **Sistema de Ranking de Usuários**  
+  Um ranking gamificado baseado na atividade do usuário, viagens concluídas, roteiros criados e engajamento na plataforma.
 
-- 👥 **Community Features**  
-  The ability for users to interact with each other, share itineraries, comment on trips, and exchange travel tips.
+- 👥 **Funcionalidades de Comunidade**  
+  Possibilidade de os usuários interagirem entre si, compartilharem roteiros, comentarem viagens e trocarem dicas.
 
-- ⭐ **Reviews & Ratings**  
-  Users could rate trips, destinations, and itineraries, helping others make better travel decisions.
+- ⭐ **Avaliações & Classificações**  
+  Usuários poderão avaliar viagens, destinos e roteiros, ajudando outros a tomarem melhores decisões.
 
-- 🎯 **Personalized Recommendations**  
-  More advanced AI-driven suggestions based on user behavior, preferences, and travel history.
+- 🎯 **Recomendações Personalizadas**  
+  Sugestões mais avançadas com IA, baseadas no comportamento, preferências e histórico de viagens do usuário.
 
-- 📱 **Mobile Application Version**  
-  The entire platform could be adapted into a mobile application using **React Native**, leveraging the same core concepts and business logic.
-
----
-
-### 💰 Monetization Strategies
-- 📢 **Advertisements**  
-  Display targeted travel-related ads (hotels, flights, experiences, and services), optimized based on user preferences and behavior.
-
-- 💎 **Subscription Plans**  
-  Offer premium subscriptions with exclusive features such as:
-  - Unlimited AI-generated itineraries
-  - Advanced filters and personalization
-  - Ad-free experience
-  - Priority access to new features
-
-These monetization options allow the platform to grow sustainably while maintaining a high-quality user experience.
+- 📱 **Versão Mobile da Aplicação**  
+  Toda a plataforma pode ser adaptada para um aplicativo mobile utilizando **React Native**, aproveitando os mesmos conceitos e lógica de negócio.
 
 ---
 
-## 📱 Other Projects
+### 💰 Estratégias de Monetização
+- 📢 **Anúncios**  
+  Exibição de anúncios segmentados relacionados a viagens (hotéis, voos, experiências e serviços), otimizados com base no comportamento e preferências do usuário.
 
-In addition to this project, I have also developed a **React Native** application called **Mistura Boa**, a mobile app focused on recipes and cooking experiences.
+- 💎 **Planos de Assinatura**  
+  Oferta de assinaturas premium com recursos exclusivos, como:
+  - Roteiros ilimitados gerados por IA
+  - Filtros avançados e personalização
+  - Experiência sem anúncios
+  - Acesso prioritário a novas funcionalidades
+
+Essas opções de monetização permitem que a plataforma cresça de forma sustentável, mantendo uma experiência de usuário de alta qualidade.
+
+---
+
+## 📱 Outros Projetos
+
+Além deste projeto, também desenvolvi uma aplicação em **React Native** chamada **Mistura Boa**, um app mobile focado em receitas e experiências culinárias.
 
 - **Mistura Boa (React Native):**  
   https://github.com/GabrielGrozinski/Mistura-Boa
 
-This experience reinforces the feasibility of building a full **mobile version of ViaJour using React Native**, ensuring consistency across web and mobile platforms.
+Essa experiência demonstra a viabilidade de uma versão mobile completa do **ViaJour em React Native**, garantindo consistência de funcionalidades, design e experiência do usuário entre web e mobile.
 
-
-Thank you for checking out this project!  
-I’m always open to feedback and collaboration opportunities.
+Obrigado por conferir este projeto!  
+Estou sempre aberto a feedbacks e oportunidades de colaboração.
